@@ -1,0 +1,33 @@
+[project]
+name = "erp_inventory_api"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Edward", email = "edwardduong71311@gmail.com"},
+]
+dependencies = [
+    "fastapi[standard]>=0.112.2",
+    "uvicorn[standard]>=0.30.6",
+    "ruff>=0.6.3",
+    "dynaconf>=3.2.6",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+[tool.pdm]
+distribution = false
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.format]
+quote-style = "single"
+indent-style = "tab"
+docstring-code-format = true
+
+[tool.pdm.scripts]
+start = "pdm run uvicorn src.main:app --port 8080"
+ruff_check = "pdm run ruff check"
+ruff_fix = "pdm run ruff check --fix"
+ruff_format = "pdm run ruff format"

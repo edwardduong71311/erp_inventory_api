@@ -1,0 +1,3 @@
+[default]
+test_value = "test value from default"
+other_value = "other value from default"
